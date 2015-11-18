@@ -1,0 +1,1 @@
+function zdravo(){console.log("zdravo tasku!")}zdravo();var x=3,y=4,zbir=x+y;console.log("Ovo ce biti neka mnogo zaebana skripta "+zbir);
