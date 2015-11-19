@@ -16,6 +16,12 @@ Nakon kloniranja kursa, za neke nive je potrebno instalirati specifične zavisno
 npm install
 ```
 
+U svakom nivou postoji aplikacija koja se pokreće komandom:
+
+```
+node app.js
+```
+
 ## Sadržaj kursa
 
 1. Pravimo server
