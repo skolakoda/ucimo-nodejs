@@ -24,7 +24,7 @@ Aplikacija u svakom od nivoa (direktorijuma) se pokreće komandom:
 node app.js
 ```
 
-Za neke aplikacije je nužno proslediti argumente putem komandne linije.
+Za neke aplikacije je nužno proslediti argumente, npr. ```node app.js 3000```
 
 ## Sadržaj kursa
 
