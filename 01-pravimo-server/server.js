@@ -1,9 +1,12 @@
 var http = require('http');
-var ruter = require('./ruter.js');
-// uvozi ruter da bi koristio njegovu funkciju rutiraj
+var fs = require('fs');
+// prima dva argumenta, npr: node server.js 3000 lorem.txt
+var port = process.argv[2];
+var filePath = process.argv[3];
 
-http.createServer(function (zahtev, odgovor) {
-	ruter.rutiraj(zahtev, odgovor);
-}).listen(1337);
+var server = http.createServer(function (request, response) {
+	var readStream = fs.createReadStream(filePath);
+	readStream.pipe(response);
+});
 
-console.log('Server running at http://127.0.0.1:1337/');
+server.listen(port);

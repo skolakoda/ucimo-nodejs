@@ -1,6 +1,6 @@
-var profil = require("./profil");
+var citac = require("./citac");
 // prima jedan argument iz komandne linije
 var korisnik = process.argv[2];
 
 if(!korisnik) korisnik = 'chalkers';
-profil.citaj(korisnik);
+citac.citaj(korisnik);

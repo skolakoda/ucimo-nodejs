@@ -14,11 +14,13 @@ Nakon kloniranja, za svaki nivo je potrebno ažurirati zavisnosti:
 npm install
 ```
 
-## Nivoi
+## Sadržaj kursa
 
-* Nivo 1: Pravimo server
-* Nivo 2: Čitamo API
-* Nivo 3: Završna aplikacija
+* 1: Pravimo server
+* 2: Pravimo ruter
+* 3: Čitamo API
+* 4: Pravimo filter
+* 5: Gotova aplikacija
 
 
 ---

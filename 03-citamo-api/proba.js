@@ -1,7 +1,7 @@
-var https = require('https');
+var http = require('http');
 
-https
-    .get("https://teamtreehouse.com/chalkers.json", function(response) {
+http
+    .get("http://pozorista.net/php/funkcije.php?sve_predstave=1", function(response) {
         console.log(response.statusCode);
         // console.log(response.headers);
     })

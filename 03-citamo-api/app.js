@@ -1,5 +1,5 @@
-var getModul = require("./get-modul");
+var citac = require("./citac");
 
 var url = "http://pozorista.net/php/funkcije.php?sve_predstave=1";
 
-getModul.citaj(url)
+citac.citaj(url)
