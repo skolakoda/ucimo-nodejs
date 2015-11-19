@@ -1,6 +1,6 @@
 var profil = require("./profil");
-var korisnici = process.argv.slice(2);
+// prima jedan argument iz komandne linije
+var korisnik = process.argv[2];
 
-if(!korisnici.length) korisnici = ['chalkers'];
-
-korisnici.forEach(profil.citaj);
+if(!korisnik) korisnik = 'chalkers';
+profil.citaj(korisnik);

@@ -30,10 +30,7 @@ function prihvatiOdgovor(odgovor) {
 
 function proveriOdgovor(odgovor, korisnik) {
 	if (odgovor.statusCode !== 200) {
-		var greska = {
-			message: "Došlo je do greške pri čitanju profila " + korisnik + ": " + http.STATUS_CODES[odgovor.statusCode]
-		};
-		javiGresku(greska);
+		console.log("Ne mogu pročitati profil " + korisnik + ": " + http.STATUS_CODES[odgovor.statusCode]);
 		return;
 	}
 	var korisnickiProfil = JSON.parse(ceoOdgovor);
