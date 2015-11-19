@@ -4,6 +4,10 @@
 
 NodeJS kurs je podeljen po nivoima. Svaki nivo je nezavisna mini aplikacija.
 
+## Preduslovi
+
+Neophodno je da na računaru već imate instaliran [Node.js](https://nodejs.org/).
+
 ## Instalacija
 
 Kloniraj projekat:
