@@ -1,0 +1,16 @@
+{
+  "name": "pravimo-server",
+  "version": "1.0.0",
+  "description": "Ucimo nodeJS",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Daman Daman",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-nodemon": "^2.0.4"
+  }
+}
