@@ -2,6 +2,8 @@
 
 [Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću node-a je moguće otvarati fajlove, čitati ih, snimati, itd, što nije moguće u običnom JS-u.
 
+Kurs je podeljen po nivoima. Svaki nivo je nezavisna mini aplikacija.
+
 ## Instalacija
 
 Kloniraj projekat:
@@ -10,7 +12,7 @@ Kloniraj projekat:
 git clone https://github.com/skolakoda/ucimo-nodejs.git
 ```
 
-Svaki nivo je nezavisna mini aplikacija. Za neke nive je potrebno instalirati specifične zavisnosti komandom:
+Nakon kloniranja, za neke nive je potrebno instalirati specifične zavisnosti komandom:
 
 ```
 npm install
