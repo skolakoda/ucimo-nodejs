@@ -16,11 +16,11 @@ npm install
 
 ## Sadržaj kursa
 
-* 1: Pravimo server
-* 2: Pravimo ruter
-* 3: Čitamo API
-* 4: Pravimo filter
-* 5: Gotova aplikacija
+1. Pravimo server
+2. Pravimo ruter
+3. Čitamo API
+4. Pravimo filter
+5. Gotova aplikacija
 
 
 ---
