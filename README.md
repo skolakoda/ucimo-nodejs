@@ -16,7 +16,7 @@ Nakon kloniranja, za neke nive je potrebno instalirati specifične zavisnosti ko
 npm install
 ```
 
-Aplikacija u svakom nivou se pokreće komandom:
+Aplikacija u svakom od nivoa se pokreće komandom:
 
 ```
 node app.js
