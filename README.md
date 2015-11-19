@@ -10,7 +10,7 @@ Kloniraj projekat:
 git clone https://github.com/skolakoda/ucimo-nodejs.git
 ```
 
-Nakon kloniranja kursa, za pojedine nive je potrebno instalirati zavisnosti komandom:
+Nakon kloniranja kursa, za neke nive je potrebno instalirati specifične zavisnosti komandom:
 
 ```
 npm install
