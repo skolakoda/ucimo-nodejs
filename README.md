@@ -1,5 +1,7 @@
 # Učimo NodeJS
 
+[Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću nodeJS-a je moguće otvarati fajlove, čitati ih, menjati im imena, itd.
+
 ## Instalacija
 
 Kloniraj projekat:
