@@ -24,6 +24,8 @@ Aplikacija u svakom od nivoa (direktorijuma) se pokreće komandom:
 node app.js
 ```
 
+Za neke aplikacije je nužno proslediti argumente putem komandne linije.
+
 ## Sadržaj kursa
 
 1. Pravimo server
