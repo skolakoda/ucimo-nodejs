@@ -1,4 +1,5 @@
-function home(zahtev, odgovor){
+function rutiraj(zahtev, odgovor){
+
 	if(zahtev.url == "/") {
 		odgovor.writeHead(200, {'Content-Type': 'text/plain'});
 		odgovor.write("Zaglavlje\n");
@@ -9,6 +10,8 @@ function home(zahtev, odgovor){
 		var ime = zahtev.url.replace('/', '').toUpperCase();
 		odgovor.end("Zdravo korisnice " + ime + "\n");
 	}
-}	// homeRoute
 
-module.exports.home = home;
+}	// rutiraj
+
+
+module.exports.rutiraj = rutiraj;
