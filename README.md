@@ -2,7 +2,7 @@
 
 [Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću node-a je moguće otvarati fajlove, čitati ih, snimati, itd, što nije moguće u običnom JS-u.
 
-NodeJS kurs je podeljen po nivoima. Svaki nivo je nezavisna mini aplikacija.
+NodeJS kurs je podeljen po nivoima. Svaki nivo je mini aplikacija.
 
 ## Preduslovi
 
