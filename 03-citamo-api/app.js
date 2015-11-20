@@ -1,5 +1,10 @@
-var citac = require("./citac");
+var https = require('https');
 
-var url = "http://pozorista.net/php/funkcije.php?sve_predstave=1";
-
-citac.citaj(url)
+https
+    .get("https://en.wikipedia.org/w/api.php?action=query&titles=Dada&format=json", function(response) {
+        console.log(response.statusCode);
+        // console.log(response.headers);
+    })
+    .on("error", function(error) {
+        console.error("Something went wrong with the connection!");
+    });

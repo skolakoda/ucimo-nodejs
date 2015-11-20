@@ -1,6 +1,5 @@
 var citac = require("./citac");
-// prima jedan argument iz komandne linije
-var korisnik = process.argv[2];
 
-if(!korisnik) korisnik = 'chalkers';
-citac.citaj(korisnik);
+var url = "http://pozorista.net/php/funkcije.php?sve_predstave=1";
+
+citac.citaj(url)
