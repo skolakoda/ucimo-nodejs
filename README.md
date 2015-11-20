@@ -28,7 +28,7 @@ Instaliraj zavisnosti:
 npm install
 ```
 
-Aplikacija u svakom od nivoa (poddirektorijuma) se pokreće komandom:
+Aplikaciju u svakom od nivoa (poddirektorijuma) pokrećeš komandom:
 
 ```
 node app.js
