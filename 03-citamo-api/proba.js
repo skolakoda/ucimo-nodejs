@@ -1,7 +1,7 @@
-var http = require('http');
+var https = require('https');
 
-http
-    .get("http://pozorista.net/php/funkcije.php?sve_predstave=1", function(response) {
+https
+    .get("https://en.wikipedia.org/w/api.php?action=query&titles=Dada&format=json", function(response) {
         console.log(response.statusCode);
         // console.log(response.headers);
     })
