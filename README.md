@@ -6,7 +6,7 @@ NodeJS kurs je podeljen po nivoima. Svaki nivo je mini aplikacija.
 
 ## Preduslovi
 
-Neophodno je da na računaru već imaš instaliran [Node.js](https://nodejs.org/).
+Neophodno je da na računaru već imaš instaliran [git](https://git-scm.com/) i [Node.js](https://nodejs.org/).
 
 ## Instalacija
 
