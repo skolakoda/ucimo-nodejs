@@ -10,25 +10,15 @@ Neophodno je da na računaru već imaš instaliran [Git](https://git-scm.com/) i
 
 ## Instalacija
 
-Kloniraj projekat:
+Kloniraj projekat i instaliraj zavisnosti:
 
 ```
 git clone https://github.com/skolakoda/ucimo-nodejs.git
-```
-
-Udji u direktorijum:
-
-```
 cd ucimo-nodejs
-```
-
-Instaliraj zavisnosti:
-
-```
 npm install
 ```
 
-Aplikaciju u svakom od nivoa (poddirektorijuma) pokrećeš komandom:
+Aplikaciju u svakom od foldera pokrećeš komandom:
 
 ```
 node app.js
