@@ -1,6 +1,6 @@
 # Učimo NodeJS
 
-![Node](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Node.js_Logo.svg/400px-Node.js_Logo.svg.png)
+![Nodejs kurs](https://skolakoda.org/images/kursevi/nodejs-logo.jpg)
 
 [Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću node-a je moguće otvarati fajlove, čitati ih, snimati, itd, što nije moguće u običnom JS-u.
 
