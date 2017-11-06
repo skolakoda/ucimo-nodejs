@@ -12,7 +12,8 @@ Neophodno je da na računaru već imaš instaliran [Git](https://git-scm.com/) i
 
 ## Instalacija
 
-Kloniraj projekat i instaliraj zavisnosti:`
+Kloniraj projekat i instaliraj zavisnosti:
+```
 git clone https://github.com/skolakoda/ucimo-nodejs.git
 cd ucimo-nodejs
 npm install
@@ -34,6 +35,5 @@ Nekim aplikacijama je nužno proslediti argumente putem komandne linije, npr. ``
 4. Pravimo filter
 5. Završna aplikacija
 
-
 ---
-[Škola koda, učimo narod programiranju!](https://skolakoda.org/)
+### [Škola koda, učimo narod programiranju!](https://skolakoda.org/)
