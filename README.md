@@ -2,6 +2,8 @@
 
 ![Nodejs kurs](https://skolakoda.org/images/kursevi/nodejs-logo.jpg)
 
+Materijali za [node.js kurs](http://127.0.0.1:4000/kursevi/ucimo-nodejs).
+
 [Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću node-a je moguće otvarati fajlove, čitati ih, snimati, itd, što nije moguće u običnom JS-u.
 
 NodeJS kurs je podeljen po nivoima. Svaki nivo je mini aplikacija.
