@@ -38,4 +38,4 @@ Nekim aplikacijama je nužno proslediti argumente putem komandne linije, npr. ``
 
 
 ---
-### Škola koda, učimo narod programiranju!
+### ![Škola koda, učimo narod programiranju!](https://skolakoda.org/)
