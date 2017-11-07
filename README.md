@@ -2,7 +2,7 @@
 
 ![Nodejs kurs](https://skolakoda.org/images/kursevi/nodejs-logo.jpg)
 
-Materijali za kurs [node.js backend programiranje](https://skolakoda.org/kursevi/ucimo-nodejs).
+Materijali za kurs [Node.js backend programiranje](https://skolakoda.org/kursevi/ucimo-nodejs) u orgranizaciji [Škole koda](https://skolakoda.org/).
 
 [Node.js](https://nodejs.org/) je Javaskript okruženje za izvršenje skripti na serveru i u fajl sistemu. Pomoću node-a je moguće otvarati fajlove, čitati ih, snimati, itd, što nije moguće u običnom JS-u.
 
