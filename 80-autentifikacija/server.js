@@ -50,7 +50,7 @@ router.post('/authenticate', (req, res) => {
 
 // route middleware to verify a token (sve rute nakon ove su zaštićene)
 router.use((req, res, next) => {
-  const token = req.headers['x-access-token']
+  const token = req.body.token || req.query.token || req.headers['x-access-token']
   if (!token) return res.status(403).send({success: false, message: 'No token.'})
   jwt.verify(token, app.get('secret'), (err, decoded) => {
     if (err) return res.json({success: false, message: 'Bad token.'})
