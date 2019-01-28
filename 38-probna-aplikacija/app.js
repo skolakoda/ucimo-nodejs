@@ -1,8 +1,8 @@
-var ruter = require("./ruter.js");
-var http = require('http');
+const http = require('http')
+const ruter = require('./ruter.js')
 
-http.createServer(function (zahtev, odgovor) {
-    ruter.prihvati(zahtev, odgovor);
-}).listen(3000);
+http
+  .createServer((zahtev, odgovor) => ruter.rutiraj(zahtev, odgovor))
+  .listen(3000)
 
-console.log('Server sluzi na 3000');
+console.log('Server sluzi na 3000')

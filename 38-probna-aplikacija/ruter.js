@@ -1,68 +1,62 @@
-var Profile = require("./profile.js");
-var render = require("./render.js");
-var querystring = require('querystring');
+const Profile = require('./profile.js')
+const render = require('./render.js')
+const {parse} = require('querystring')
 
-var headerInfo = {'Content-Type': 'text/html'};
+function renderFooter(res) {
+  render.prikazi('footer', {}, res)
+  res.end()
+}
 
-function prihvatiRute(zahtev, odgovor){
+function renderError(res, error) {
+  render.prikazi('error', { errorMessage: error.message }, res)
+  render.prikazi('search', {}, res)
+}
 
-    if(zahtev.method.toLocaleLowerCase() == "post") {
-        zahtev.on("data", function(telo){
-            var nadimak = querystring.parse(telo.toString()).username;
-            odgovor.writeHead(303, {'Location': "/" + nadimak});
-            odgovor.end();
-        });
-    }   // if post
+function renderProfile(res, podaci) {
+  const params = {
+    avatarUrl: podaci.gravatar_url,
+    nadimak: podaci.profile_name,
+    bedzevi: podaci.badges.length,
+    jsPoeni: podaci.points.JavaScript
+  }
+  render.prikazi('profile', params, res)
+}
 
-    if(zahtev.method.toLocaleLowerCase() == "get") {
-        odgovor.writeHead(200, headerInfo);
-        render.prikazi("header", {}, odgovor);
-    }   // if get
+function rutiraj(req, res) {
+  const metod = req.method.toLocaleLowerCase()
 
-    if(zahtev.method.toLocaleLowerCase() == "get" && zahtev.url == "/") {
-        render.prikazi("search", {}, odgovor);
-        podnozjeIKraj(odgovor);
-    } // kraj if root
+  if (metod == 'post') {
+    req.on('data', body => {
+      const {username} = parse(body.toString()) // body je bafer
+      res.writeHead(303, { 'Location': '/' + username })
+      res.end()
+    })
+  }
 
-    if(zahtev.method.toLocaleLowerCase() == "get" && zahtev.url.length > 1) {
-        var nadimak = zahtev.url.replace("/", "");
-        var ovajProfil = new Profile(nadimak);
+  if (metod == 'get') {
+    res.writeHead(200, { 'Content-Type': 'text/html' })
+    render.prikazi('header', {}, res)
 
-        ovajProfil.on("end", function(podaci) {
-            prikaziProfil(odgovor, podaci);
-            podnozjeIKraj(odgovor);
-        });
+    if (req.url == '/') {
+      render.prikazi('search', {}, res)
+      renderFooter(res)
+    }
+  
+    if (req.url.length > 1) {
+      const nadimak = req.url.substring(1)
+      const ovajProfil = new Profile(nadimak)
+  
+      ovajProfil.on('end', podaci => {
+        renderProfile(res, podaci)
+        renderFooter(res)
+      })
+  
+      ovajProfil.on('error', error => {
+        renderError(res, error)
+        renderFooter(res)
+      })
+    }  
+  }
+}
 
-        ovajProfil.on("error", function(error){
-            prikaziGresku(odgovor, error);
-            podnozjeIKraj(odgovor);
-        });
-    }   // if nadimak.length
-
-
-    /* POMOCNE FUNKCIJE */
-
-    function podnozjeIKraj(odgovor){
-        render.prikazi("footer", {}, odgovor);
-        odgovor.end();
-    }   // podnozjeIKraj
-
-    function prikaziGresku(odgovor, error){
-        render.prikazi("error", {errorMessage: error.message}, odgovor);
-        render.prikazi("search", {}, odgovor);
-    }   // prikaziGresku
-
-    function prikaziProfil(odgovor, podaci){
-        var vrednosti = {
-            avatarUrl: podaci.gravatar_url,
-            nadimak: podaci.profile_name,
-            bedzevi: podaci.badges.length,
-            jsPoeni: podaci.points.JavaScript
-        };
-        render.prikazi("profile", vrednosti, odgovor);
-    }   // prikaziProfil
-
-}   // prihvatiRute
-
-
-module.exports.prihvati = prihvatiRute;
+module.exports.rutiraj = rutiraj
