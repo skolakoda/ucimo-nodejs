@@ -2,12 +2,8 @@ const http = require('http')
 const fs = require('fs')
 const port = 8000
 
-const imena = fs.readFileSync('imena.txt', 'utf8')
+const sadrzaj = fs.readFileSync('lorem.txt', 'utf8')
 
-const server = http.createServer((request, response) => {
-  response.end(imena)
-})
+const server = http.createServer((request, response) => response.end(sadrzaj))
 
-server.listen(port, '127.0.0.1', () => {
-  console.log('Server je pokrenut na adresi http://127.0.0.1:' + port)
-})
+server.listen(port, () => console.log('Server sluzi na http://localhost:' + port))

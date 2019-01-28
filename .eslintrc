@@ -40,6 +40,8 @@
         "semi": ["warn", "never"],
         "quotes": ["warn", "single"],
         "prefer-const": "warn",
+        "prefer-arrow-callback": "warn",
+        "arrow-parens": ["warn", "as-needed"],
         "space-infix-ops": "warn",
         "comma-spacing": ["warn", { "before": false, "after": true }],
         "spaced-comment": ["warn", "always"],
