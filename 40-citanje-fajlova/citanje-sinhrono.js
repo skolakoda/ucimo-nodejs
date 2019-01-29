@@ -1,7 +1,6 @@
 const fs = require('fs')
 
-let sadrzaj = fs.readFileSync('imena.txt', 'utf8')
-sadrzaj += ' i Pera'
+const sadrzaj = fs.readFileSync('imena.txt', 'utf8')
 
-fs.writeFileSync('imena.txt', sadrzaj)
-console.log('Uspesno sacuvano')
+console.log(sadrzaj)
+// process.stdout.write(sadrzaj)
