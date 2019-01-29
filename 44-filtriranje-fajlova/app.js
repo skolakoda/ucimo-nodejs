@@ -1,13 +1,11 @@
-var filter = require("./filter.js");
-// prima 2 argumenta, npr: node app.js "../" "js
-var putanja = process.argv[2];
-var ext = process.argv[3];
+const filter = require('./filter.js')
+// prima dva argumenta, npr: node app.js ./ .js
+const putanja = process.argv[2]
+const ekstenzija = process.argv[3]
 
-filter(putanja, ext, odstampajFiltrirano);
+function stampaj(err, data) {
+  if (err) throw err
+  data.map(x => console.log(x))
+}
 
-function odstampajFiltrirano(err, data){
-	if(err) return;
-	for(var i in data){
-		console.log(data[i]);
-	}
-}	// odstampajFiltrirano
+filter(putanja, ekstenzija, stampaj)
