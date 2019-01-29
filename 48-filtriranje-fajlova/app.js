@@ -4,7 +4,7 @@ const putanja = process.argv[2]
 const ekstenzija = process.argv[3]
 
 function stampaj(err, data) {
-  if (err) throw err
+  if (err) return console.log(err)
   data.map(x => console.log(x))
 }
 
