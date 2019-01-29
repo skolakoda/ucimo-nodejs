@@ -1,50 +1,23 @@
-var EventEmitter = require("events").EventEmitter;
-var http = require("http");
-var https = require('https');
-var util = require("util");
+const {EventEmitter} = require('events')
+const {get} = require('https')
 
-/**
- * An EventEmitter to get a Treehouse students profile.
- * @param username
- * @constructor
- */
-function Profile(username) {
+function ucitajProfil(username) {
+  const emiter = new EventEmitter()
 
-    EventEmitter.call(this);
-    profileEmitter = this;
+  get(`https://teamtreehouse.com/${username}.json`, response => {
+    if (response.statusCode == 404) 
+      return emiter.emit('error', {message: 'Nema trazenog korisnika'})
+    let body = ''
 
-    //Connect to the API URL (https://teamtreehouse.com/username.json)
-    var request = https.get("https://teamtreehouse.com/" + username + ".json", function(response) {
-        var body = "";
-
-        if (response.statusCode !== 200) {
-            request.abort();
-            //Status Code Error
-            profileEmitter.emit("error", new Error("There was an error getting the profile for " + username + ". (" + http.STATUS_CODES[response.statusCode] + ")"));
-        }
-
-        //Read the data
-        response.on('data', function (chunk) {
-            body += chunk;
-            profileEmitter.emit("data", chunk);
-        });
-
-        response.on('end', function () {
-            if(response.statusCode === 200) {
-                try {
-                    //Parse the data
-                    var profile = JSON.parse(body);
-                    profileEmitter.emit("end", profile);
-                } catch (error) {
-                    profileEmitter.emit("error", error);
-                }
-            }
-        }).on("error", function(error){
-            profileEmitter.emit("error", error);
-        });
-    });
+    response
+      .on('data', chunk => {
+        body += chunk
+        emiter.emit('data', chunk)
+      })
+      .on('end', () => emiter.emit('end', JSON.parse(body)))
+      .on('error', error => emiter.emit('error', error))
+  })
+  return emiter
 }
 
-util.inherits( Profile, EventEmitter );
-
-module.exports = Profile;
+module.exports = ucitajProfil
