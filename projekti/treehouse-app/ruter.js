@@ -40,17 +40,13 @@ function rutiraj(req, res) {
     if (req.url == '/') {
       renderSearch(res)
     }
-  
+
     if (req.url.length > 1) {
-      const nadimak = req.url.substring(1)
-      const profil = ucitajProfil(nadimak) // ima chalkers
+      const username = req.url.substring(1)
+      const profil = ucitajProfil(username) // ima chalkers
       profil
-        .on('end', podaci => {
-          renderProfile(res, podaci)
-        })
-        .on('error', error => {
-          renderError(res, error)
-        })
+        .on('ucitano', podaci => renderProfile(res, podaci))
+        .on('greska', error => renderError(res, error))
     }  
   }
 }
