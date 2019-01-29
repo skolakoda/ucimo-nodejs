@@ -1,11 +1,10 @@
 const fs = require('fs')
 
 fs.watch('lorem.txt', () => {
-  console.log('Promenjeno')
-  // sacuvati u novom fajlu
-  const ulazniTok = fs.createReadStream('lorem.txt')
-  const izlazniTok = fs.createWriteStream('target.txt');
-  ulazniTok.pipe(izlazniTok)
+  console.log('Fajl je promenjen')
+  const sadrzaj = fs.readFileSync('lorem.txt', 'utf8')
+  fs.writeFileSync('target.txt', sadrzaj.replace(/\s/g, ''))
 })
 
-console.log('Cekamo da se fajl promeni')
+console.log('Cekam da se fajl promeni')
+
